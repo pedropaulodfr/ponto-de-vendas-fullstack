@@ -1,0 +1,62 @@
+.lista-pontos-vendas-container {
+    margin-left: 30px;
+}
+
+.lista-header{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+    color: #387A97
+    ;
+    font-size: .8em;
+    width: 80vw;
+}
+
+.cadastrar-novo-btn{
+    background-color: #102F59;
+    border: none;
+    width: 120px;
+    height: 30px;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.lista-pontos-vendas-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    margin-top: 30px;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.08);
+}
+
+.lista-body{
+    display: flex;
+    width: 80vw;
+}
+
+.lista-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 70vw;
+}
+
+.lista-top input[type="text"]{
+    outline: none;
+    border: solid 1px #777777;
+    width: 250px;
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.pontos-vendas-title{
+    margin-left: 10px;
+}
+
