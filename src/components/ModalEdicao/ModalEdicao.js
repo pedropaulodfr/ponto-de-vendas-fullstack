@@ -182,7 +182,7 @@ function ModalEdicao(props) {
             <div className='modal-edicao-content'>
                 <div className="dados-pessoais-edicao-content">
                     <div className="dados-pessoais-edicao-title">
-                        <h2>Dados Pessoais</h2>
+                        <h2>Dados Gerais</h2>
                     </div>
                     
                     <div className="inputs-edicao">
