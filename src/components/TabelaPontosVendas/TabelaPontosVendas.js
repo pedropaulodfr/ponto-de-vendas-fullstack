@@ -25,7 +25,7 @@ const TabelaPontosVendas = (props) => {
 
     useEffect(() => {
         const handlePesquisaPontoVenda = () => {
-            let resultadoPesquisa = pontoVendas.filter(pontoVenda => pontoVenda.nome.toLowerCase().startsWith(props.pesquisa.toLowerCase()));
+            let resultadoPesquisa = pontoVendas.filter(pontoVenda => pontoVenda.descricao.toLowerCase().startsWith(props.pesquisa.toLowerCase()));
             setPontoVendas(resultadoPesquisa)
 
             if (props.pesquisa == "") {

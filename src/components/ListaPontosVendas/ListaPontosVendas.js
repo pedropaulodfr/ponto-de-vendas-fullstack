@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import TabelaPontosVendas from "../TabelaPontosVendas/TabelaPontosVendas";
 import './ListaPontosVendas.css'
 import { Link } from 'react-router-dom'
-import TabelaPontosVendas from "../TabelaPontosVendas/TabelaPontosVendas";
 
 
 const ListaPontosVendas = () => {
+
+    const [pesquisa, setPesquisa] = useState("")
+    const [statusPesquisa, setStatusPesquisa] = useState()
+
     return (
         <div className="lista-pontos-vendas-container">
             <div className='lista-header'>
@@ -22,12 +26,13 @@ const ListaPontosVendas = () => {
                         <input 
                             type="text" 
                             placeholder="Pesquisar"
+                            onChange={(e) => {setPesquisa(e.target.value); setStatusPesquisa(true)}}
                         />
                     </div>
                 </div>
 
-                <TabelaPontosVendas pesquisa={'pesquisa'} statusPesquisa={'statusPesquisa'}/>
-                
+                <TabelaPontosVendas pesquisa={pesquisa} statusPesquisa={statusPesquisa}/>
+
             </div>
 
 
