@@ -4,15 +4,19 @@ import ModalConfirmacao from '../ModalConfirmacao/ModalConfirmacao';
 import ModalEdicao from "../ModalEdicao/ModalEdicao";
 import Alertas from "../Alertas/Alertas";
 import api from '../../api';
+import ModalMapa from "../ModalMapa/ModalMapa";
 
 const TabelaPontosVendas = (props) => {
     const [showModal, setShowModal] = useState(false);
     const [showModalEdicao, setShowModalEdicao] = useState(false);
+    const [showModalMapa, setShowModalMapa] = useState(false);
     const [pontoVendas, setPontoVendas] = useState([]);
     const [pontoVendasPesquisa, setPontoVendasPesquisa] = useState([]);
     const [pontoVendaSelecionadoId, setPontoVendaSelecionadoId] = useState(null);
     const [exclusaoSucesso, setExclusaoSucesso] = useState(false);
     const [edicaoSucesso, setEdicaoSucesso] = useState(false)
+    const [longitude, setLongitude] = useState("")
+    const [latitude, setLatitude] = useState("")
 
     useEffect(() => {
         api
@@ -60,12 +64,20 @@ const TabelaPontosVendas = (props) => {
 
     return (
         <div className="tabela-pontos-vendas">
+            {showModalMapa && (
+                <ModalMapa
+                    statusModal={setShowModalMapa} 
+                    pontoVendaId={pontoVendaSelecionadoId} 
+                />
+            )}
             {showModalEdicao && (
                 <ModalEdicao 
                     statusModal={setShowModalEdicao} 
                     pontoVendaId={pontoVendaSelecionadoId} 
                     listaPontoVendas={setPontoVendas}
                     setStatus={setEdicaoSucesso}
+                    latitude={latitude}
+                    longitude={longitude}
                 />
             )}
             {exclusaoSucesso && (
@@ -113,7 +125,9 @@ const TabelaPontosVendas = (props) => {
                                     className="mapa-btn"
                                     onClick={() => {
                                         setPontoVendaSelecionadoId(ponto.id);
-                                        setShowModalEdicao(true)
+                                        setShowModalMapa(true);
+                                        setLongitude(ponto.longitude);
+                                        setLatitude(ponto.latitude);
                                     }}
                                 >
                                     Mapa

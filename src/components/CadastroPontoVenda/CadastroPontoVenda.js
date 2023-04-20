@@ -260,7 +260,7 @@ function CadastroPontoVenda() {
 
                 <div className="buttons">
                     <button className="salvar-btn" onClick={handleSalvarPontoVenda}>Salvar Dados</button>
-                    <Link to="/home">
+                    <Link to="/">
                         <button className="voltar-btn">Voltar</button>
                     </Link>
                 </div>
